@@ -2,7 +2,7 @@ NAME
     Games::Hangman - A text-based hangman
 
 VERSION
-    This document describes version 0.01 of Games::Hangman (from Perl
+    This document describes version 0.02 of Games::Hangman (from Perl
     distribution Games-Hangman), released on 2014-08-12.
 
 SYNOPSIS

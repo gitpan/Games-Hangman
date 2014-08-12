@@ -31,7 +31,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Games-Hangman
   homepage: https://metacpan.org/release/Games-Hangman
   repository: git://github.com/sharyanto/perl-Games-Hangman.git
-version: '0.01'
+version: '0.02'
 x_Dist_Zilla:
   perl:
     version: '5.018002'

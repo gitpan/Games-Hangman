@@ -1,7 +1,7 @@
 package Games::Hangman;
 
 our $DATE = '2014-08-12'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 #use Color::ANSI::Util qw(ansibg ansifg);
 use Module::List qw(list_modules);
@@ -15,7 +15,7 @@ use Mo qw(build default);
 use experimental 'smartmatch';
 
 has list              => (is => 'rw');
-has _list_obj         => (is => 'rw');
+has words             => (is => 'rw');
 has list_type         => (is => 'rw'); # either (w)ord or (p)hrase
 has min_len           => (is => 'rw');
 has current_word      => (is => 'rw');
@@ -213,11 +213,8 @@ sub new_word {
     my $self = shift;
 
     my $word;
-    if ($self->list_type eq 'phrase') {
-        $word = $self->_list_obj->random_phrase;
-    } else {
-        $word = $self->_list_obj->random_word;
-    }
+    my $tries = 0;
+    $word = $self->words->[rand @{ $self->words }];
 
     $self->current_word($word);
     $self->num_words( $self->num_words+1 );
@@ -287,9 +284,22 @@ sub BUILD {
         load $mod;
         $self->list_type($type);
         $self->list($list);
-        $self->_list_obj($mod->new);
+        if (!defined($self->min_len)) {
+            $self->min_len($type eq 'w' ? 6 : 0);
+        }
+        my $wl = $mod->new;
+        my @words;
+        my $re = ".{".($self->min_len+0)."}";
+        if ($type eq 'w') {
+            @words = $wl->words_like(qr/$re/);
+        } else {
+            @words = $wl->phrases_like(qr/$re/);
+        }
+        unless (@words) {
+            die "Can't find eligible entries from $list\n" unless @words;
+        }
+        $self->words(\@words);
     }
-
 }
 
 sub init {
@@ -413,7 +423,7 @@ Games::Hangman - A text-based hangman
 
 =head1 VERSION
 
-This document describes version 0.01 of Games::Hangman (from Perl distribution Games-Hangman), released on 2014-08-12.
+This document describes version 0.02 of Games::Hangman (from Perl distribution Games-Hangman), released on 2014-08-12.
 
 =head1 SYNOPSIS
 
