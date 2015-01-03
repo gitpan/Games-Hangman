@@ -1,7 +1,7 @@
 package Games::Hangman;
 
-our $DATE = '2014-08-12'; # DATE
-our $VERSION = '0.02'; # VERSION
+our $DATE = '2015-01-03'; # DATE
+our $VERSION = '0.03'; # VERSION
 
 #use Color::ANSI::Util qw(ansibg ansifg);
 use Module::List qw(list_modules);
@@ -423,23 +423,13 @@ Games::Hangman - A text-based hangman
 
 =head1 VERSION
 
-This document describes version 0.02 of Games::Hangman (from Perl distribution Games-Hangman), released on 2014-08-12.
+This document describes version 0.03 of Games::Hangman (from Perl distribution Games-Hangman), released on 2015-01-03.
 
 =head1 SYNOPSIS
 
  % hangman
 
 =for Pod::Coverage ^(.+)$
-
-=head1 TODO
-
-=over
-
-=item * Record and save high scores
-
-=item * Add some animation
-
-=back
 
 =head1 SEE ALSO
 
@@ -451,7 +441,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/Games-Hang
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-Games-Hangman>.
+Source repository is at L<https://github.com/perlancar/perl-Games-Hangman>.
 
 =head1 BUGS
 
@@ -463,11 +453,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2015 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

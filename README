@@ -1,42 +1,8 @@
-NAME
-    Games::Hangman - A text-based hangman
-
-VERSION
-    This document describes version 0.02 of Games::Hangman (from Perl
-    distribution Games-Hangman), released on 2014-08-12.
-
 SYNOPSIS
+
      % hangman
 
-TODO
-    *   Record and save high scores
-
-    *   Add some animation
-
 SEE ALSO
+
     hangman
-
-HOMEPAGE
-    Please visit the project's homepage at
-    <https://metacpan.org/release/Games-Hangman>.
-
-SOURCE
-    Source repository is at
-    <https://github.com/sharyanto/perl-Games-Hangman>.
-
-BUGS
-    Please report any bugs or feature requests on the bugtracker website
-    <https://rt.cpan.org/Public/Dist/Display.html?Name=Games-Hangman>
-
-    When submitting a bug or request, please include a test-file or a patch
-    to an existing test-file that illustrates the bug or desired feature.
-
-AUTHOR
-    Steven Haryanto <stevenharyanto@gmail.com>
-
-COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Steven Haryanto.
-
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
 
